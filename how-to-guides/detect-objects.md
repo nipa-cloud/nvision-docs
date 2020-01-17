@@ -60,8 +60,8 @@ The API is accessible via the HTTP method and URL:
     "raw_data": <<BASE64_ENCODED_IMAGE>>,
     "configurations": [
         {
-            "parameter": "OutputCroppedImage",
-            "value": "false"
+            "parameter":"OutputCroppedImage",
+            "value":"false"
         },
         {
             "parameter": "ConfidenceThreshold",

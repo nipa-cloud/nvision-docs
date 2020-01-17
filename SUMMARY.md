@@ -23,8 +23,11 @@
 * [Python SDK](api-references/python-sdk.md)
 * [JavaScript SDK](api-references/javascript-sdk-1.md)
 
-## Additional Resources
+## Resources
 
+* [Use Cases](use-cases-1/README.md)
+  * [Image Content Tagging](use-cases-1/image-content-tagging.md)
+* [Pricing](pricing.md)
 * [Quotas and Limits](quotas-and-limits.md)
 * [Change Logs](change-logs.md)
 * [FAQs](faqs.md)
