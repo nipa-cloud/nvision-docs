@@ -1,6 +1,6 @@
 # Machine Learning Services
 
-The followings are services provided by Nvision API that enables machine learning services to extract insightful information from images with simple and easy to use APIs.
+The followings are services provided by Nvision service that enables machine learning services to extract insightful information from images with simple and easy to use APIs.
 
 ### **Object Detection**
 

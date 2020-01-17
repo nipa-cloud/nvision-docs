@@ -2,6 +2,8 @@
 
 * [Introduction](README.md)
 * [Machine Learning Services](machine-learning-services.md)
+* [Try Web Demo](https://www.nipa.cloud/en/products/nvision)
+* [Nipa Cloud Portal](https://portal.nipa.cloud/)
 
 ## API Concepts
 
@@ -10,8 +12,9 @@
 
 ## Quickstarts
 
-* [Set up the Nvision API](quickstarts/set-up-the-nvision-api.md)
+* [Set up the Nvision Service](quickstarts/set-up-the-nvision-service.md)
 * [Make a RESTful Call](quickstarts/make-a-restful-call.md)
+* [Make a WebSocket Stream](quickstarts/make-a-websocket-stream.md)
 
 ## How-TO Guides
 
@@ -19,18 +22,17 @@
 
 ## API References
 
-* [API Guide](api-references/javascript-sdk.md)
+* [API Guide](api-references/api-guide.md)
 * [Python SDK](api-references/python-sdk.md)
-* [JavaScript SDK](api-references/javascript-sdk-1.md)
+* [JavaScript SDK](api-references/javascript-sdk.md)
 
 ## Resources
 
-* [Use Cases](use-cases-1/README.md)
-  * [Image Content Tagging](use-cases-1/image-content-tagging.md)
+* [Use Cases](use-cases/README.md)
+  * [Image Content Tagging](use-cases/image-content-tagging.md)
 * [Pricing](pricing.md)
 * [Quotas and Limits](quotas-and-limits.md)
 * [Change Logs](change-logs.md)
-* [FAQs](faqs.md)
+* [FAQ](faqs.md)
 * [GitHub: Nvision](https://github.com/nipa-cloud?utf8=%E2%9C%93&q=nvision&type=&language=)
-* [Nvision Web Demo](https://www.nipa.cloud/en/products/nvision)
 

@@ -1,4 +1,4 @@
-# FAQs
+# FAQ
 
 ## How Nvision service is charged?
 

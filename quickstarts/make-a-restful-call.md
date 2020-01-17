@@ -2,9 +2,11 @@
 
 Nvision image processing is **synchronous**. The input requests and output responses are structured in JSON format. You can make a **RESTful API call** by sending the image as a **base64 encoded** string in the body of your request, see [RESTful and WebSocket](https://docs.nipa.cloud/knowledge-base/api-concepts/) API concepts.  
   
-You can make a RESTful API call by sending the image as a **base64 encoded** string in the body of your request. The API is accessible via the domain, `https://nvision.nipa.cloud/api/<service_name>` over **HTTP** to **POST** data.  
-  
-If you have not created a Nvision service account credentials, do so now in this [set up the Nvision API](https://docs.nipa.cloud/knowledge-base/set-up-the-nvision-api/) quickstart for instructions.
+You can make a RESTful API call by sending the image as a **base64 encoded** string in the body of your request. The API is accessible via the domain, `https://nvision.nipa.cloud/api/<service_name>` over **HTTP** to **POST** data.
+
+{% hint style="info" %}
+If you have not created a Nvision service account credentials, do so now in this [set up the Nvision service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-service) quickstart for instructions.
+{% endhint %}
 
 ### Using cURL command line
 
@@ -24,8 +26,8 @@ export API_KEY=<<YOUR_API_KEY>>
 echo -n '{"raw_data": "'"$(base64 image.jpg)"'"}' | \
 curl -X POST \
 https://nvision.nipa.cloud/api/object-detection \
--H 'Authorization: ApiKey $API_KEY' \
--H "Content-Type: application/json; charset=utf-8" \
+-H 'Authorization: ApiKey '$API_KEY \
+-H "Content-Type: application/json" \
 -d @- | json_pp
 ```
 
