@@ -82,11 +82,11 @@ For object detection service, there are two available configurations as follows:
   * Value options: `[0, 1]`
   * Default: `"0.1"`
 
-## Making a RESTful Call
+## Make a RESTful Call
 
  You can call this API through REST calls or native SDKs. 
 
-### **Send the request using the cURL command line**
+### **Using the cURL command line**
 
 ```bash
 export API_KEY="<<YOUR_API_KEY>>"
@@ -109,7 +109,7 @@ https://nvision.nipa.cloud/api/object-detection \
 -d @- | json_pp
 ```
 
-### **Send the request using the client libraries**
+### **Using the client libraries**
 
 Nvision SDKs provide interface for calling Nvision services in your own language.
 
@@ -171,7 +171,7 @@ print(json.dumps(response.json(), indent=4, sort_keys=True))
 An example of how to integrate `@nipacloud/nvision` SDK to the frontend app.  
 [https://github.com/nipa-cloud/nvision-browser-example](https://github.com/nipa-cloud/nvision-browser-example)
 
-### To set up the SDK with Webpack
+### Set up the SDK with Webpack
 
 Nvision SDK comes with a built-in TypeScript definition. You can configure Webpack alias to point to the browser variant of the library.
 
