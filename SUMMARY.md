@@ -12,7 +12,7 @@
 
 ## Quickstarts
 
-* [Set up the Nvision Service](quickstarts/set-up-the-nvision-service.md)
+* [Set up the Nvision Service](quickstarts/set-up-the-nvision-api.md)
 * [Make a RESTful Call](quickstarts/make-a-restful-call.md)
 * [Make a WebSocket Stream](quickstarts/make-a-websocket-stream.md)
 
@@ -22,7 +22,7 @@
 
 ## API References
 
-* [API Guide](api-references/api-guide.md)
+* [API Guide](api-references/javascript-sdk.md)
 * [Python SDK](api-references/python-sdk.md)
 * [JavaScript SDK](api-references/javascript-sdk.md)
 

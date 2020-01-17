@@ -1,15 +1,15 @@
 # Python SDK
 
-Python SDK is based on the Nvision image processing service for **synchronous calls**. The input requests and output responses are structured in JSON format. You can make a **RESTful API call** by sending an image as a **base64 encoded** **string** in the body of your request, see [make API calls](https://nvision-docs.nipa.cloud/quickstarts/make-a-restful-call) quickstart.
+Python SDK is based on the Nvision image processing service for **synchronous calls**. The input requests and output responses are structured in JSON format. You can make a **RESTful API call** by sending an image as a **base64 encoded** **string** in the body of your request, see [make API calls](https://docs.nipa.cloud/knowledge-base/make-a-restful-call/) quickstart.
 
 ### Quickstarts
 
 Before you begin to use this SDK, these quickstarts will guide you to get started with the Nvision API.
 
-1. [API Concepts: RESTful and WebSocket](https://nvision-docs.nipa.cloud/api-concepts/restful-calls)
-2. [Set up the Nvision Service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-service)
-3. [Make a RESTful Call](https://nvision-docs.nipa.cloud/quickstarts/make-a-restful-call)
-4. [Detect Objects](https://nvision-docs.nipa.cloud/how-to-guides/detect-objects)
+1. [API Concepts: RESTful and WebSocket](https://docs.nipa.cloud/knowledge-base/api-concepts/)
+2. [Set up the Nvision API](https://docs.nipa.cloud/knowledge-base/set-up-the-nvision-api/)
+3. [Make a RESTful Call](https://docs.nipa.cloud/knowledge-base/make-a-restful-call/)
+4. [Detect Objects](https://docs.nipa.cloud/article-categories/how-to-guides/)
 
 ### Installation
 

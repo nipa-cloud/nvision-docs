@@ -1,6 +1,6 @@
 # RESTful Calls
 
-Nvision cloud service provides two types of APIs. With our flexible API protocols across **RESTful** for synchronized **image** processing and **WebSocket** for real-time **video** analysis with a stream processing. Learn more, [what is Nvision service](https://nvision-docs.nipa.cloud/#what-is-the-nvision-api). Integrating our machine learning services into your technology stack has never been easier. Ranging from edge applications to back-end services.
+Nvision cloud service provides two types of APIs. With our flexible API protocols across **RESTful** for synchronized **image** processing and **WebSocket** for real-time **video** analysis with a stream processing. Learn more, [what is Nvision service](https://nvision-docs.nipa.cloud/#what-is-the-nvision-service). Integrating our machine learning services into your technology stack has never been easier. Ranging from edge applications to back-end services.
 
 Both image and video processing support the same API services which can detect and recognize labels with a wide range of categories. For more information about the Nvision services provided, see [machine learning services](https://nvision-docs.nipa.cloud/machine-learning-services).
 
