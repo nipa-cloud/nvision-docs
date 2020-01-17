@@ -19,6 +19,15 @@
 
 ## API References
 
+* [API Guide](api-references/javascript-sdk.md)
 * [Python SDK](api-references/python-sdk.md)
-* [JavaScript SDK](api-references/javascript-sdk.md)
+* [JavaScript SDK](api-references/javascript-sdk-1.md)
+
+## Additional Resources
+
+* [Quotas and Limits](quotas-and-limits.md)
+* [Change Logs](change-logs.md)
+* [FAQs](faqs.md)
+* [GitHub: Nvision](https://github.com/nipa-cloud?utf8=%E2%9C%93&q=nvision&type=&language=)
+* [Nvision Web Demo](https://www.nipa.cloud/en/products/nvision)
 
