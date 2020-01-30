@@ -2,7 +2,7 @@
 
 {% api-method method="post" host="https://nvision.cakes.com" path="/api/object-detetion" %}
 {% api-method-summary %}
-POST object-detection  
+POST object-detection
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -61,14 +61,38 @@ Predictions successfully retrieved.
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=404 %}
+{% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-Could not find the service endpoint.
+The request body is not conformed.
 {% endapi-method-response-example-description %}
 
-```javascript
+```
 {
-    "message": "Not found"
+    "message": "Bad request"
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=401 %}
+{% api-method-response-example-description %}
+The API key is not valid, not defined, or revoked.
+{% endapi-method-response-example-description %}
+
+```
+{
+    "message": "This API key is invalid."
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=500 %}
+{% api-method-response-example-description %}
+Something happens on our service, please contact our support.
+{% endapi-method-response-example-description %}
+
+```
+{
+    "message": "Something went wrong"
 }
 ```
 {% endapi-method-response-example %}
@@ -76,7 +100,7 @@ Could not find the service endpoint.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### Example JSON Request Body
+## Example JSON Request Body
 
 ```javascript
 {
@@ -94,8 +118,8 @@ Could not find the service endpoint.
 }
 ```
 
-The configuration is different on individual service types. It is structured as a key-value mapping. A config name is defined in **`parameter`** field and the corresponding value is defined in **`value`** field in **string format**.  
-  
+The configuration is different on individual service types. It is structured as a key-value mapping. A config name is defined in **`parameter`** field and the corresponding value is defined in **`value`** field in **string format**.
+
 For object detection service, there are two available configurations as follows:
 
 * **`OutputCroppedImage`**: to return cropped images from bounding box detections.

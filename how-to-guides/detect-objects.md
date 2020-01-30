@@ -4,8 +4,7 @@ You can use the Nvision’s **Object Detection** service to detect labels in an 
 
 ![](../.gitbook/assets/street.png)
 
-A response is returned in JSON format similar to the following example:  
-
+A response is returned in JSON format similar to the following example:
 
 ```javascript
 {
@@ -38,10 +37,10 @@ A response is returned in JSON format similar to the following example:
 ```
 
 {% hint style="info" %}
-If you **have not created a Nvision service** account credentials, do so now in this [set up the Nvision service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-api) quickstart for instructions. 
+If you **have not created a Nvision service** account credentials, do so now in this [set up the Nvision service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-api) quickstart for instructions.
 {% endhint %}
 
-![](../.gitbook/assets/screenshot-from-2020-01-16-14-06-50.png)
+![](../.gitbook/assets/screenshot-from-2020-01-16-14-06-50%20%281%29.png)
 
 Once your service has been created, go to the service overview page under API Key to get your service key.
 
@@ -75,8 +74,8 @@ The API is accessible via the HTTP method and URL, see :
 }
 ```
 
-The configuration is different on individual service types. It is structured as a key-value mapping. A config name is defined in **`parameter`** field and the corresponding value is defined in **`value`** field in **string format**.  
-  
+The configuration is different on individual service types. It is structured as a key-value mapping. A config name is defined in **`parameter`** field and the corresponding value is defined in **`value`** field in **string format**.
+
 For object detection service, there are two available configurations as follows:
 
 * **`OutputCroppedImage`**: to return cropped images from bounding box detections.
@@ -88,7 +87,7 @@ For object detection service, there are two available configurations as follows:
 
 ## Make a RESTful Call
 
- You can call this API through REST calls or native SDKs. 
+You can call this API through REST calls or native SDKs.
 
 ### **Using the cURL command line**
 
@@ -162,8 +161,19 @@ print(json.dumps(response.json(), indent=4, sort_keys=True))
 {% endtab %}
 
 {% tab title="JavaScript" %}
-```
+```typescript
+import nvision from "@nipacloud/nvision";
 
+const objectDetectionService = nvision.objectDetection({
+    apiKey: "<YOUR_API_KEY_GOES_HERE>"
+});
+
+objectDetectionService.predict(
+    "BASE64_ENCODED_IMAGE"
+).then((result) => {
+    // Outout the result object to console
+    console.log(result);
+});
 ```
 {% endtab %}
 {% endtabs %}
@@ -175,7 +185,7 @@ An example of how to integrate `@nipacloud/nvision` SDK to the frontend app.
 
 ### Set up the SDK with Webpack
 
-Nvision SDK comes with a built-in TypeScript definition. You can configure Webpack alias to point to the browser variant of the library.
+If you use the SDK in the webpack-based project, you can provide the module resolution alias in your webpack configuration.
 
 {% tabs %}
 {% tab title="JavaScript" %}
