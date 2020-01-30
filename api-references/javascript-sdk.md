@@ -89,7 +89,7 @@ predict (
         },
         name: string,
         confidence: number,
-        cropped_image: string,
+        cropped_image: string
     }
 }>
 ```
@@ -162,19 +162,22 @@ This example uses `opencv4nodejs` to capture the webcam image, then submit it th
 
 ```javascript
 import * as OpenCV from "opencv4nodejs";
-
 import nvision from "@nipacloud/nvision";
 
 const objectdetectionStreamClient = nvision.objectDetection({
     streamingKey: "<YOUR_STREAMING_KEY_GOES_HERE>"
 }).stream();
 
+objectDetectionStreamClient.on("message", (result) => {
+    console.log(result);
+});
+
 objectdetectionStreamClient.connect().then(() => {
-    const cvCam = new OpenCV.VideoCapture(parseInt(process.env.VIDEOSRC) | 0);
+    const cvCam = new OpenCV.VideoCapture(0);
     setInterval(() => {
         const cvCamFrameMat = cvCam.read();
         const jpgEncoded = OpenCV.imencode(".jpg", cvCamFrameMat);
-        objectdetectionStreamClient.predict(jpgEncoded)
+        objectdetectionStreamClient.predict(jpgEncoded);
     }, 200);
 });
 ```
