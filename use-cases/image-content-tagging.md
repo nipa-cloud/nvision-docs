@@ -16,9 +16,7 @@ The idea is to get the most possible out of your images by indexing those images
 
 Using keywords tags for photo organization
 
-![](../.gitbook/assets/nvision-messaging-system-tagging-1.png)
-
-### \*\*\*\*
+![Tagging user-uploaded images from the Web App and indexing them to the database](../.gitbook/assets/nvision-messaging-system-tagging-1.png)
 
 ### **Related use cases**
 
@@ -28,7 +26,5 @@ Using keywords tags for photo organization
 
 **From Pinterest**
 
-![Credis: Pinterest suggested keywords search, https://www.pinterest.com/](../.gitbook/assets/screenshot-from-2020-01-30-14-23-25.png)
-
-
+![Credits: Pinterest suggested keywords search, https://www.pinterest.com/](../.gitbook/assets/screenshot-from-2020-01-30-14-23-25.png)
 
