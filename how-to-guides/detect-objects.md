@@ -1,6 +1,6 @@
 # Detect Objects
 
-You can use the Nvision’s **Object Detection** service to detect labels in an image. this service localizes and identifies multiple objects in the image such as people, animals, vehicles, and furniture. see [machine learning services](https://docs.nipa.cloud/knowledge-base/machine-learning-services/?preview_id=248&preview_nonce=3ce72ed05b&preview=true).
+You can use the Nvision’s **Object Detection** service to detect labels in an image. this service localizes and identifies multiple objects in the image such as people, animals, vehicles, and furniture. see [machine learning services](https://nvision-docs.nipa.cloud/machine-learning-services).
 
 ![](../.gitbook/assets/street.png)
 
@@ -37,9 +37,13 @@ A response is returned in JSON format similar to the following example:
 }
 ```
 
-If you **have not created a Nvision service** account credentials, do so now in this [set up the Nvision API](https://docs.nipa.cloud/knowledge-base/set-up-the-nvision-api/) quickstart for instructions. Once your service has been created, go to the service overview page under **API Key** to get your service key.
+{% hint style="info" %}
+If you **have not created a Nvision service** account credentials, do so now in this [set up the Nvision service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-api) quickstart for instructions. 
+{% endhint %}
 
 ![](../.gitbook/assets/screenshot-from-2020-01-16-14-06-50.png)
+
+Once your service has been created, go to the service overview page under API Key to get your service key.
 
 ## Detect objects in an image
 
@@ -51,17 +55,17 @@ The [base64](https://en.wikipedia.org/wiki/Base64) encoded string is a binary-to
 
 ### JSON Request Body
 
-The API is accessible via the HTTP method and URL:
+The API is accessible via the HTTP method and URL, see :
 
-**`POST`** `https://nvision.nipa.cloud/api/<<service_name>>`
+**`POST`** `https://nvision.nipa.cloud/api/object-detection`
 
 ```javascript
 {
     "raw_data": <<BASE64_ENCODED_IMAGE>>,
     "configurations": [
         {
-            "parameter":"OutputCroppedImage",
-            "value":"false"
+            "parameter": "OutputCroppedImage",
+            "value": "false"
         },
         {
             "parameter": "ConfidenceThreshold",
@@ -91,21 +95,19 @@ For object detection service, there are two available configurations as follows:
 ```bash
 export API_KEY="<<YOUR_API_KEY>>"
 
-export API_KEY="<<YOUR_API_KEY>>"
-
 # save the json request body as a file named request.json
 curl -X POST \
 https://nvision.nipa.cloud/api/object-detection
 -H 'Authorization: ApiKey '$API_KEY \
--H 'Content-Type: application/json; charset=utf-8' \
+-H 'Content-Type: application/json' \
 -d @request.json | json_pp
 
 # or read a local image from filepath
 echo -n '{"raw_data": "'"$(base64 image.jpg)"'"}' | \
 curl -X POST \
 https://nvision.nipa.cloud/api/object-detection \
--H 'Authorization: ApiKey $API_KEY' \
--H "Content-Type: application/json; charset=utf-8" \
+-H 'Authorization: ApiKey '$API_KEY \
+-H "Content-Type: application/json" \
 -d @- | json_pp
 ```
 
@@ -134,7 +136,7 @@ npm i @nipacloud/nvision
 
 #### Example Usage
 
-See the [API Reference](https://docs.nipa.cloud/article-categories/api-references/), in this guide, covers calling Nvision API for **Python** and **JavaScript**.
+See the [SDK Reference](https://nvision-docs.nipa.cloud/api-references/python-sdk), in this guide, covers calling Nvision API for **Python** and **JavaScript**.
 
 {% tabs %}
 {% tab title="Python" %}
