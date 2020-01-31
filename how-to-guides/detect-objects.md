@@ -178,7 +178,7 @@ objectDetectionService.predict(
 {% endtab %}
 {% endtabs %}
 
-### Set up the SDK with Webpack
+**Set up the SDK with Webpack**
 
 If you use the SDK in the webpack-based project, you can provide the module resolution alias in your webpack configuration.
 
@@ -201,5 +201,5 @@ If you use the SDK in the webpack-based project, you can provide the module reso
 ## Detect Object in a video
 
 An example of how to integrate `@nipacloud/nvision` SDK to the frontend app.  
-[https://github.com/nipa-cloud/nvision-browser-example](https://github.com/nipa-cloud/nvision-browser-example)
+[https://github.com/nipa-cloud/nvision-browser-example](https://github.com/nipa-cloud/nvision-browser-example) or see [making a websocket stream quickstart.](../quickstarts/make-a-websocket-stream.md)
 

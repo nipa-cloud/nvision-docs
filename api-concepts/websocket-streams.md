@@ -20,9 +20,9 @@ For instance, you develop a **headless javascript** running on edge computes \(i
 
 **To use Nvision with streaming videos,** your application needs to implement the following:
 
-* NCP Portal: set up your endpoints in the created Nvision service page.
-* Client: develop websocket stream using SDK with your API key.
-* Server: create a webhook url \(callbacks\) to receive HTTP POST requests from Nvision service.
+* **Client:** develop websocket stream using SDK with your API key.
+* **Server:** create a webhook url \(callbacks\) to receive HTTP POST requests from Nvision service.
+* **Portal:** set up your endpoints in the created Nvision service page.
 
 For more information, see [a video streaming quickstart](https://nvision-docs.nipa.cloud/quickstarts/make-a-websocket-stream).
 

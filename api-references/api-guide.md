@@ -66,7 +66,7 @@ Predictions successfully retrieved.
 The request body is not conformed.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "message": "Bad request"
 }
@@ -78,7 +78,7 @@ The request body is not conformed.
 The API key is not valid, not defined, or revoked.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "message": "This API key is invalid."
 }
@@ -90,7 +90,7 @@ The API key is not valid, not defined, or revoked.
 Something happens on our service, please contact our support.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "message": "Something went wrong"
 }

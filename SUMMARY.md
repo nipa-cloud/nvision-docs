@@ -28,11 +28,11 @@
 
 ## Resources
 
-* [Use Cases](use-cases/README.md)
-  * [Image Content Tagging](use-cases/image-content-tagging.md)
-* [Pricing](pricing.md)
-* [Quotas and Limits](quotas-and-limits.md)
-* [Change Logs](change-logs.md)
-* [FAQ](faqs.md)
+* [Use Cases](resources/use-cases/README.md)
+  * [Image Content Tagging](resources/use-cases/image-content-tagging.md)
+* [Pricing](resources/pricing.md)
+* [Quotas and Limits](resources/quotas-and-limits.md)
+* [Change Logs](resources/change-logs.md)
+* [FAQ](resources/faqs.md)
 * [GitHub: Nvision](https://github.com/nipa-cloud?utf8=%E2%9C%93&q=nvision&type=&language=)
 

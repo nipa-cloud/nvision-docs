@@ -6,7 +6,7 @@ JavaScript SDK is based on the Nvision image processing service as `Promise` bas
 
 1. [API Concepts: RESTful and WebSocket](https://nvision-docs.nipa.cloud/api-concepts/restful-calls)
 2. [Set up the Nvision Service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-service)
-3. [Make a RESTful Call](https://nvision-docs.nipa.cloud/quickstarts/make-a-restful-call)
+3. [Make a Websocket Stream](../quickstarts/make-a-websocket-stream.md)
 4. [Detect Objects](https://nvision-docs.nipa.cloud/how-to-guides/detect-objects)
 
 Before you begin to use this SDK, these quickstarts will guide you to get started with the Nvision API.
@@ -16,7 +16,7 @@ Before you begin to use this SDK, these quickstarts will guide you to get starte
 Install `@nipacloud/nvision` via NPM or Yarn to your project.
 
 ```bash
-$ yarn add @nipacloud/nvision
+yarn add @nipacloud/nvision
 ```
 
 ### Importing the SDK
@@ -29,7 +29,7 @@ const nvision = require("@nipacloud/nvision")
 import nvision from "@nipacloud/nvision"
 ```
 
-### Additional setup for front-end application
+### Additional setup for front-end app
 
 If you use the SDK in the front-end application, you need to import the browser variant provided at `@nipacloud/nvision/dist/browser/nvision.js`
 
@@ -69,7 +69,7 @@ const objectDetectionService = nvision.objectDetection({
 
 You do not have to provide both `apiKey` or `streamingKey` . If you use only API call, you can provide only `apiKey` , this applied to WebSocket streaming too.
 
-### Making the API call
+### Making an API call
 
 You can make an API call using `predict()` function of the service object
 
@@ -129,7 +129,7 @@ objectDetectionService.predict(
 });
 ```
 
-### Stream image through WebSocket
+### Streaming video frames through WebSocket
 
 You can make a WebSocket connection using `stream()` generator function to get the streaming client object.
 
