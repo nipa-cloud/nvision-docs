@@ -40,8 +40,6 @@ A response is returned in JSON format similar to the following example:
 If you **have not created a Nvision service** account credentials, do so now in this [set up the Nvision service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-api) quickstart for instructions.
 {% endhint %}
 
-![](https://github.com/nipa-cloud/nvision-docs/tree/4dd57a781d8c7e0e7a52ed92de991bc986e2b4be/.gitbook/assets/screenshot-from-2020-01-16-14-06-50%20%281%29.png)
-
 Once your service has been created, go to the service overview page under API Key to get your service key.
 
 ## Detect objects in an image
