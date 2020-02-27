@@ -54,7 +54,7 @@ The [base64](https://en.wikipedia.org/wiki/Base64) encoded string is a binary-to
 
 The API is accessible via the HTTP method and URL, see :
 
-**`POST`** `https://nvision.nipa.cloud/api/object-detection`
+**`POST`** `https://nvision.nipa.cloud/api/v1/object-detection`
 
 ```javascript
 {
@@ -76,12 +76,15 @@ The configuration is different on individual service types. It is structured as 
 
 For object detection service, there are two available configurations as follows:
 
-* **`OutputCroppedImage`**: to return cropped images from bounding box detections.
-  * Value options: `"true"` or `"false"`
-  * Default: `"false"`
 * **`ConfidenceThreshold`**: to define the minimum confidence score of the prediction results.
   * Value options: `[0, 1]`
   * Default: `"0.1"`
+* **`OutputCroppedImage`**: to return cropped images from bounding box detections.
+  * Value options: `"true"` or `"false"`
+  * Default: `"false"`
+* **`OutputVisualizedImage`**: to return drawn bounding box detections on raw image.
+  * Value options: `"true"` or `"false"`
+  * Default: `"false"`
 
 ## Make a RESTful Call
 
@@ -94,7 +97,7 @@ export API_KEY="<<YOUR_API_KEY>>"
 
 # save the json request body as a file named request.json
 curl -X POST \
-https://nvision.nipa.cloud/api/object-detection
+https://nvision.nipa.cloud/api/v1/object-detection
 -H 'Authorization: ApiKey '$API_KEY \
 -H 'Content-Type: application/json' \
 -d @request.json | json_pp
@@ -102,10 +105,11 @@ https://nvision.nipa.cloud/api/object-detection
 # or read a local image from filepath
 echo -n '{"raw_data": "'"$(base64 image.jpg)"'"}' | \
 curl -X POST \
-https://nvision.nipa.cloud/api/object-detection \
+https://nvision.nipa.cloud/api/v1/object-detection \
 -H 'Authorization: ApiKey '$API_KEY \
 -H "Content-Type: application/json" \
 -d @- | json_pp
+
 ```
 
 ### **Using the client libraries**
@@ -163,12 +167,12 @@ print(json.dumps(response.json(), indent=4, sort_keys=True))
 import nvision from "@nipacloud/nvision";
 
 const objectDetectionService = nvision.objectDetection({
-    apiKey: "<YOUR_API_KEY_GOES_HERE>"
+    apiKey: "<YOUR_RESTFUL_KEY>"
 });
 
-objectDetectionService.predict(
-    "BASE64_ENCODED_IMAGE"
-).then((result) => {
+objectDetectionService.predict({
+    rawData: "BASE64_ENCODED_IMAGE"
+}).then((result) => {
     // Outout the result object to console
     console.log(result);
 });
@@ -200,4 +204,6 @@ If you use the SDK in the webpack-based project, you can provide the module reso
 
 An example of how to integrate `@nipacloud/nvision` SDK to the frontend app.  
 [https://github.com/nipa-cloud/nvision-browser-example](https://github.com/nipa-cloud/nvision-browser-example) or see [making a websocket stream quickstart.](../quickstarts/make-a-websocket-stream.md)
+
+{% page-ref page="../quickstarts/make-a-websocket-stream.md" %}
 

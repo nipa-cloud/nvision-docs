@@ -62,8 +62,8 @@ To use the object detection service, you need to create the service object using
 import nvision from "@nipacloud/nvision";
 
 const objectDetectionService = nvision.objectDetection({
-    apiKey: "<YOUR_API_KEY_GOES_HERE>",
-    streamingKey: "<YOUR_STREAMING_KEY_GOES_HERE>"
+    apiKey: "<YOUR_RESTFUL_KEY>",
+    streamingKey: "<YOUR_STREAMING_KEY>"
 });
 ```
 
@@ -75,10 +75,11 @@ You can make an API call using `predict()` function of the service object
 
 {% code title="Function signature" %}
 ```typescript
-predict (
-    base64EncodedImage: string,
-    cropOutputImage?: boolean
-): Promise<{
+predict ({
+    rawData: string,
+    outputCroppedImage?: boolean,
+    confidenceThreshold?: number
+}): Promise<{
     service_id: string,
     detected_object: {
         bounding_box: {
@@ -87,6 +88,7 @@ predict (
             right: number,
             top: number
         },
+        parent: string,
         name: string,
         confidence: number,
         cropped_image: string
@@ -99,15 +101,17 @@ predict (
 
 | Parameter | Description |
 | :--- | :--- |
-| base64EncodedImage | Base64 string encoded JPEG/PNG image |
-| cropOutputImage \(Optional\) | Set "CropOutputImage" parameter, if true, API response will include the cropped images for each bounding box in Base64 encoded JPEG/PNG  format. Default is false. |
+| rawData | Base64 string encoded JPEG/PNG image |
+| outputCroppedImage \(optional\) | Set "OutputCroppedImage" parameter, if true, API response will include the cropped images for each bounding box in Base64 encoded JPEG/PNG  format. Default is false. |
+| confidenceThreshold \(optional\) | Set "ConfidenceThreshold" parameter" to define the minimum confidence score of the prediction results. |
+| outputVisualizedImage \(optional\) | Set "OutputVisualizedImage" parameter to return drawn detection objects on raw image |
 
 #### Promised return object
 
 | Field |  |
 | :--- | :--- |
 | service\_id | Service ID associated to the API key used |
-| detected\_object | List of the detected object |
+| detected\_object | List of the detected objects |
 | name | Classified name of the object |
 | confidence | Confidence value of the prediction |
 | cropped\_image | Bounding box cropped image |
@@ -118,7 +122,7 @@ predict (
 import nvision from "@nipacloud/nvision";
 
 const objectDetectionService = nvision.objectDetection({
-    apiKey: "<YOUR_API_KEY_GOES_HERE>"
+    apiKey: "<YOUR_RESTFUL_KEY>"
 });
 
 objectDetectionService.predict(
@@ -138,14 +142,18 @@ stream (): {
     on: (event: string, listener: (eventArgs: any) => unknown) => void;
     once: (event: string, listener: (eventArgs: any) => unknown) => void;
     connect: () => Promise<void>;
-    predict: (
-        buffer: ArrayBuffer, 
-        cropOutputImage?: boolean, 
+    predict: ({
         sourceId?: string, 
-        frameId?: string
-    ) => Promise<void>;
+        frameId?: string,
+        rawData: string | ArrayBuffer, 
+        confidenceThreshold?: number,
+        outputCroppedImage?: boolean,
+        outputVisualizedImage?: boolean
+    }) => Promise<void>;
 };
 ```
+
+>
 
 #### Returned object
 
@@ -161,15 +169,22 @@ stream (): {
 This example uses `opencv4nodejs` to capture the webcam image, then submit it through the WebSocket channel.
 
 ```javascript
-import * as OpenCV from "opencv4nodejs";
-import nvision from "@nipacloud/nvision";
-
+const OpenCV = require("opencv4nodejs");
+const nvision = require("@nipacloud/nvision");
 const objectdetectionStreamClient = nvision.objectDetection({
-    streamingKey: "<YOUR_STREAMING_KEY_GOES_HERE>"
+    streamingKey: "<YOUR_STREAMING_KEY>"
 }).stream();
 
-objectDetectionStreamClient.on("message", (result) => {
-    console.log(result);
+// display visualized image 
+objectdetectionStreamClient.on("message", (data) => {
+    console.log("raw_data size:", data.raw_data.length);
+    const img = OpenCV.imdecode(data.raw_data);
+    OpenCV.imshow("visualization", img);
+    OpenCV.waitKey(1);
+});
+
+objectdetectionStreamClient.on("sent", (bytesSent) => { 
+    console.log("video frame sent: ", bytesSent, "bytes")
 });
 
 objectdetectionStreamClient.connect().then(() => {
@@ -177,8 +192,15 @@ objectdetectionStreamClient.connect().then(() => {
     setInterval(() => {
         const cvCamFrameMat = cvCam.read();
         const jpgEncoded = OpenCV.imencode(".jpg", cvCamFrameMat);
-        objectdetectionStreamClient.predict(jpgEncoded);
-    }, 200);
+
+        // make prediction request
+        objectdetectionStreamClient.predict({
+            rawData: new Uint8Array(jpgEncoded.buffer),
+            confidenceThreshold: 0.1,
+            outputCroppedImage: false,
+            outputVisualizedImage: false
+        })
+    }, 1000);
 });
 ```
 

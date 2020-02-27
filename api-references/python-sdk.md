@@ -51,18 +51,22 @@ print(json.dumps(response.json(), indent=4, sort_keys=True))
 
 * **`image`**: [base64](https://en.wikipedia.org/wiki/Base64) encoded string that represents binary data in an ASCII **string** format.
   *  e.g. `/9j/4AAQSkZJRgABAQEBLAEsAAD...`
-* **`confidence_threshold`**: to define the minimum confidence score of the prediction results.
-  * Value options: float`[0, 1]`
-  * Default: `0.1`
-* **`output_cropped_image`**: to return cropped images from bounding box detections.
-  * Value options: bool `True` or `false`
-  * Default: `False`
+* **`ConfidenceThreshold`**: to define the minimum confidence score of the prediction results.
+  * Value options: `[0, 1]`
+  * Default: `"0.1"`
+* **`OutputCroppedImage`**: to return cropped images from bounding box detections.
+  * Value options: `"true"` or `"false"`
+  * Default: `"false"`
+* **`OutputVisualizedImage`**: to return drawn bounding box detections on raw image.
+  * Value options: `"true"` or `"false"`
+  * Default: `"false"`
 
 ```python
 def predict(self,
             image,
             confidence_threshold=0.1,
-            output_cropped_image=False):
+            output_cropped_image=False,
+            output_visualized_image=False):
 
 docstring: Make a RESTful request for model inference 
     :param image: base64 encoded string
@@ -70,6 +74,9 @@ docstring: Make a RESTful request for model inference
         - value options: [0,1]
         - default: 0.1
     :param output_cropped_image: Boolean
+        - value options: True or False,
+        - default: False
+    :param output_visualized_image: Boolean
         - value options: True or False,
         - default: False
 ```

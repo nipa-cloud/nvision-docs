@@ -10,14 +10,14 @@ Nvision image processing is **synchronous**. The input requests and output respo
 
 ![](../.gitbook/assets/nvision-pic-nn1.png)
 
-The API is built around a simple idea that you send an image input to the service and receives prediction results. The API is accessible via the domain, `https://nvision.nipa.cloud/api/<<service_name>>` over **HTTP** to **POST** data as an example cURL command below:
+The API is built around a simple idea that you send an image input to the service and receives prediction results. The API is accessible via the domain, `https://nvision.nipa.cloud/api/v1/<<service_name>>` over **HTTP** to **POST** data as an example cURL command below:
 
 ```bash
 curl -X POST \                                        
 -H 'Authorization: ApiKey '$YOUR_API_KEY \
 -H 'Content-Type: application/json' \
 -d '{"raw_data": <<BASE64_ENCODED_IMAGE>>}` \
-https://nvision.nipa.cloud/api/<<service_name>>
+https://nvision.nipa.cloud/api/v1/<<service_name>>
 ```
 
 We also provide Nipa Cloud SDKs to call Nvision API in your own language, see the [API Reference](https://nvision-docs.nipa.cloud/api-references/api-guide) in this guide covers calling Nvision API for JavaScript and Python.

@@ -1,6 +1,6 @@
 # API Guide
 
-{% api-method method="post" host="https://nvision.cakes.com" path="/api/object-detetion" %}
+{% api-method method="post" host="https://nvision.nipa.cloud" path="/api/v1/object-detection" %}
 {% api-method-summary %}
 POST object-detection
 {% endapi-method-summary %}
@@ -85,14 +85,34 @@ The API key is not valid, not defined, or revoked.
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=500 %}
+{% api-method-response-example httpCode=429 %}
 {% api-method-response-example-description %}
-Something happens on our service, please contact our support.
+Request rate limit exceeded.
 {% endapi-method-response-example-description %}
 
 ```text
 {
-    "message": "Something went wrong"
+    "message": "Too many request."
+}ConfidenceThreshold: to define the minimum confidence score of the prediction results.
+Value options: [0, 1]
+Default: "0.1"
+OutputCroppedImage: to return cropped images from bounding box detections.
+Value options: "true" or "false"
+Default: "false"
+OutputVisualizedImage: to return drawn bounding box detections on raw image.
+Value options: "true" or "false"
+Default: "false"
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=500 %}
+{% api-method-response-example-description %}
+Internal server error.
+{% endapi-method-response-example-description %}
+
+```
+{
+    "message": "Something went wrong."
 }
 ```
 {% endapi-method-response-example %}
@@ -107,12 +127,16 @@ Something happens on our service, please contact our support.
     "raw_data": <<BASE64_ENCODED_IMAGE>>,
     "configurations": [
         {
+            "parameter": "ConfidenceThreshold",
+            "value": "0.1"
+        },
+        {
             "parameter": "OutputCroppedImage",
             "value": "false"
         },
         {
-            "parameter": "ConfidenceThreshold",
-            "value": "0.1"
+            "parameter": "OutputVisualizedImage",
+            "value": "false"
         }
     ]
 }
@@ -122,10 +146,13 @@ The configuration is different on individual service types. It is structured as 
 
 For object detection service, there are two available configurations as follows:
 
-* **`OutputCroppedImage`**: to return cropped images from bounding box detections.
-  * Value options: `"true"` or `"false"`
-  * Default: `"false"`
 * **`ConfidenceThreshold`**: to define the minimum confidence score of the prediction results.
   * Value options: `[0, 1]`
   * Default: `"0.1"`
+* **`OutputCroppedImage`**: to return cropped images from bounding box detections.
+  * Value options: `"true"` or `"false"`
+  * Default: `"false"`
+* **`OutputVisualizedImage`**: to return drawn bounding box detections on raw image.
+  * Value options: `"true"` or `"false"`
+  * Default: `"false"`
 

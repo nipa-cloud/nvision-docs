@@ -1,8 +1,12 @@
+---
+description: Nvision with Image Request
+---
+
 # Make a RESTful Call
 
 Nvision image processing is **synchronous**. The input requests and output responses are structured in JSON format. You can make a **RESTful API call** by sending the image as a **base64 encoded** string in the body of your request, see [RESTful and WebSocket](https://nvision-docs.nipa.cloud/api-concepts/restful-calls) API concepts.  
   
-You can make a RESTful API call by sending the image as a **base64 encoded** string in the body of your request. The API is accessible via the domain, `https://nvision.nipa.cloud/api/<service_name>` over **HTTP** to **POST** data.
+You can make a RESTful API call by sending the image as a **base64 encoded** string in the body of your request. The API is accessible via the domain, `https://nvision.nipa.cloud/api/v1/<service_name>` over **HTTP** to **POST** data.
 
 {% hint style="info" %}
 If you have not created a Nvision service account credentials, do so now in this [set up the Nvision service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-service) quickstart for instructions.
@@ -25,7 +29,7 @@ export API_KEY=<<YOUR_API_KEY>>
 # read a local image from filepath
 echo -n '{"raw_data": "'"$(base64 image.jpg)"'"}' | \
 curl -X POST \
-https://nvision.nipa.cloud/api/object-detection \
+https://nvision.nipa.cloud/api/v1/object-detection \
 -H 'Authorization: ApiKey '$API_KEY \
 -H "Content-Type: application/json" \
 -d @- | json_pp
