@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Machine Learning Services](machine-learning-services.md)
-* [Try Web Demo](https://www.nipa.cloud/en/products/nvision)
+* [Try Web Demo](https://nvision.nipa.cloud/)
 * [Nipa Cloud Portal](https://portal.nipa.cloud/)
 
 ## API Concepts
