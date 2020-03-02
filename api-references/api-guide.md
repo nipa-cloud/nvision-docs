@@ -68,7 +68,7 @@ The request body is not conformed.
 
 ```text
 {
-    "message": "Bad request"
+    "message": "Bad request."
 }
 ```
 {% endapi-method-response-example %}
@@ -93,15 +93,7 @@ Request rate limit exceeded.
 ```text
 {
     "message": "Too many request."
-}ConfidenceThreshold: to define the minimum confidence score of the prediction results.
-Value options: [0, 1]
-Default: "0.1"
-OutputCroppedImage: to return cropped images from bounding box detections.
-Value options: "true" or "false"
-Default: "false"
-OutputVisualizedImage: to return drawn bounding box detections on raw image.
-Value options: "true" or "false"
-Default: "false"
+}
 ```
 {% endapi-method-response-example %}
 
