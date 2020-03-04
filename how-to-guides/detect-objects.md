@@ -130,7 +130,8 @@ pip install nvision
 
 {% tab title="JavaScript" %}
 ```bash
-npm i @nipacloud/nvision
+yarn init
+yarn add @nipacloud/nvision
 ```
 {% endtab %}
 {% endtabs %}
@@ -164,7 +165,7 @@ print(json.dumps(response.json(), indent=4, sort_keys=True))
 
 {% tab title="JavaScript" %}
 ```typescript
-import nvision from "@nipacloud/nvision";
+const nvision = require("@nipacloud/nvision");
 
 const objectDetectionService = nvision.objectDetection({
     apiKey: "<YOUR_RESTFUL_KEY>"
@@ -180,7 +181,7 @@ objectDetectionService.predict({
 {% endtab %}
 {% endtabs %}
 
-**Set up the SDK with Webpack**
+**Set up the SDK with Webpack \(optional\)**
 
 If you use the SDK in the webpack-based project, you can provide the module resolution alias in your webpack configuration.
 

@@ -59,7 +59,7 @@ If you correctly setup the module resolution, you can import module using a typi
 To use the object detection service, you need to create the service object using `objectDetection()` generator function
 
 ```javascript
-import nvision from "@nipacloud/nvision";
+const nvision = require("@nipacloud/nvision");
 
 const objectDetectionService = nvision.objectDetection({
     apiKey: "<YOUR_RESTFUL_KEY>",
@@ -77,8 +77,9 @@ You can make an API call using `predict()` function of the service object
 ```typescript
 predict ({
     rawData: string,
+    confidenceThreshold?: number,
     outputCroppedImage?: boolean,
-    confidenceThreshold?: number
+    outputVisualizedImage?: boolean
 }): Promise<{
     service_id: string,
     detected_object: {
