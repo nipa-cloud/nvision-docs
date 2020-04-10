@@ -4,10 +4,10 @@ JavaScript SDK is based on the Nvision image processing service as `Promise` bas
 
 ## Quickstarts
 
-1. [API Concepts: RESTful and WebSocket](https://nvision-docs.nipa.cloud/api-concepts/restful-calls)
-2. [Set up the Nvision Service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-service)
+1. [API Concepts: RESTful and WebSocket](https://docs.nvision.nipa.cloud/api-concepts/restful-calls)
+2. [Set up the Nvision Service](https://docs.nvision.nipa.cloud/quickstarts/set-up-the-nvision-service)
 3. [Make a Websocket Stream](../quickstarts/make-a-websocket-stream.md)
-4. [Detect Objects](https://nvision-docs.nipa.cloud/how-to-guides/detect-objects)
+4. [Detect Objects](https://docs.nvision.nipa.cloud/how-to-guides/detect-objects)
 
 Before you begin to use this SDK, these quickstarts will guide you to get started with the Nvision API.
 

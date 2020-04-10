@@ -1,12 +1,12 @@
 # RESTful Calls
 
-Nvision cloud service provides two types of APIs. With our flexible API protocols across **RESTful** for synchronized **image** processing and **WebSocket** for real-time **video** analysis with a stream processing. Learn more, [what is Nvision service](https://nvision-docs.nipa.cloud/#what-is-the-nvision-service). Integrating our machine learning services into your technology stack has never been easier. Ranging from edge applications to back-end services.
+Nvision cloud service provides two types of APIs. With our flexible API protocols across **RESTful** for synchronized **image** processing and **WebSocket** for real-time **video** analysis with a stream processing. Learn more, [what is Nvision service](https://docs.nvision.nipa.cloud/#what-is-the-nvision-service). Integrating our machine learning services into your technology stack has never been easier. Ranging from edge applications to back-end services.
 
-Both image and video processing support the same API services which can detect and recognize labels with a wide range of categories. For more information about the Nvision services provided, see [machine learning services](https://nvision-docs.nipa.cloud/machine-learning-services).
+Both image and video processing support the same API services which can detect and recognize labels with a wide range of categories. For more information about the Nvision services provided, see [machine learning services](https://docs.nvision.nipa.cloud/machine-learning-services).
 
 ### Nvision Image Processing <a id="nvision-image-processing"></a>
 
-Nvision image processing is **synchronous**. The input requests and output responses are structured in JSON format. You can make a **RESTful API call** by sending an image as a **base64 encoded** **string** in the body of your request, see [make API calls](https://nvision-docs.nipa.cloud/quickstarts/make-a-restful-call) quickstart.
+Nvision image processing is **synchronous**. The input requests and output responses are structured in JSON format. You can make a **RESTful API call** by sending an image as a **base64 encoded** **string** in the body of your request, see [make API calls](https://docs.nvision.nipa.cloud/quickstarts/make-a-restful-call) quickstart.
 
 ![](../.gitbook/assets/nvision-pic-nn1.png)
 
@@ -20,5 +20,5 @@ curl -X POST \
 https://nvision.nipa.cloud/api/v1/<<service_name>>
 ```
 
-We also provide Nipa Cloud SDKs to call Nvision API in your own language, see the [API Reference](https://nvision-docs.nipa.cloud/api-references/api-guide) in this guide covers calling Nvision API for JavaScript and Python.
+We also provide Nipa Cloud SDKs to call Nvision API in your own language, see the [API Reference](https://docs.nvision.nipa.cloud/api-references/api-guide) in this guide covers calling Nvision API for JavaScript and Python.
 

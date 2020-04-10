@@ -1,8 +1,8 @@
 # WebSocket Streams
 
-Nvision cloud service provides two types of APIs. With our flexible API protocols across **RESTful** for synchronized **image** processing and **WebSocket** for real-time **video** analysis with a stream processing. Learn more, [what is Nvision service](https://nvision-docs.nipa.cloud/#what-is-the-nvision-service). Integrating our machine learning services into your technology stack has never been easier. Ranging from edge applications to back-end services.
+Nvision cloud service provides two types of APIs. With our flexible API protocols across **RESTful** for synchronized **image** processing and **WebSocket** for real-time **video** analysis with a stream processing. Learn more, [what is Nvision service](https://docs.nvision.nipa.cloud/#what-is-the-nvision-service). Integrating our machine learning services into your technology stack has never been easier. Ranging from edge applications to back-end services.
 
-Both image and video processing support the same API services which can detect and recognize labels with a wide range of categories. For more information about the Nvision services provided, see [machine learning services](https://nvision-docs.nipa.cloud/machine-learning-services).
+Both image and video processing support the same API services which can detect and recognize labels with a wide range of categories. For more information about the Nvision services provided, see [machine learning services](https://docs.nvision.nipa.cloud/machine-learning-services).
 
 ### Nvision Video Streaming
 
@@ -24,5 +24,5 @@ For instance, you develop a **headless javascript** running on edge computes \(i
 * **Server:** create a webhook url \(callbacks\) to receive HTTP POST requests from Nvision service.
 * **Portal:** set up your endpoints in the created Nvision service page.
 
-For more information, see [a video streaming quickstart](https://nvision-docs.nipa.cloud/quickstarts/make-a-websocket-stream).
+For more information, see [a video streaming quickstart](https://docs.nvision.nipa.cloud/quickstarts/make-a-websocket-stream).
 

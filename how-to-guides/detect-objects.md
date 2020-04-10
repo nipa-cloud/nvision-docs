@@ -1,6 +1,6 @@
 # Detect Objects
 
-You can use the Nvision’s **Object Detection** service to detect labels in an image. this service localizes and identifies multiple objects in the image such as people, animals, vehicles, and furniture. see [machine learning services](https://nvision-docs.nipa.cloud/machine-learning-services).
+You can use the Nvision’s **Object Detection** service to detect labels in an image. this service localizes and identifies multiple objects in the image such as people, animals, vehicles, and furniture. see [machine learning services](https://docs.nvision.nipa.cloud/machine-learning-services).
 
 ![](../.gitbook/assets/street.png)
 
@@ -37,7 +37,7 @@ A response is returned in JSON format similar to the following example:
 ```
 
 {% hint style="info" %}
-If you **have not created a Nvision service** account credentials, do so now in this [set up the Nvision service](https://nvision-docs.nipa.cloud/quickstarts/set-up-the-nvision-api) quickstart for instructions.
+If you **have not created a Nvision service** account credentials, do so now in this [set up the Nvision service](https://docs.nvision.nipa.cloud/quickstarts/set-up-the-nvision-api) quickstart for instructions.
 {% endhint %}
 
 Once your service has been created, go to the service overview page under API Key to get your service key.
@@ -138,7 +138,7 @@ yarn add @nipacloud/nvision
 
 #### Example Usage
 
-See the [SDK Reference](https://nvision-docs.nipa.cloud/api-references/python-sdk), in this guide, covers calling Nvision API for **Python** and **JavaScript**.
+See the [SDK Reference](https://docs.nvision.nipa.cloud/api-references/python-sdk), in this guide, covers calling Nvision API for **Python** and **JavaScript**.
 
 {% tabs %}
 {% tab title="Python" %}
