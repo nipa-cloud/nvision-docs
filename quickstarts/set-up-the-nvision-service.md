@@ -18,7 +18,7 @@ To use Nvision services, you must create a NCP project.
 
 ### Get the API key
 
-In the overview page, you can view your API usage metrics and the service information including service id, quota info, and **API key**. ****Once your service has been started, see **generate** under **API Key** to get your service key.
+In the overview page, you can view your API usage metrics and the service information including service id, quota info, and **API key**. Once your service has been created, see **generate** under **API Key** to get your service key.
 
 ![Nvision service overview page](../.gitbook/assets/screenshot-from-2020-01-03-14-29-22.png)
 
